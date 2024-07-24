@@ -1,0 +1,112 @@
+### Register a new user (owner)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "owner1",
+  "password": "password123",
+  "role": "owner"
+}
+
+### Register a new user (cashier)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "cashier1",
+  "password": "password123",
+  "role": "cashier"
+}
+
+### Register a new user (customer)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "customer1",
+  "password": "password123",
+  "role": "customer"
+}
+
+### Login as owner
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "owner1",
+  "password": "password123"
+}
+
+### Login as cashier
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "cashier1",
+  "password": "password123"
+}
+
+### Login as customer
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "customer1",
+  "password": "password123"
+}
+
+### Add a menu item (owner only)
+POST http://localhost:3000/menu
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJPV04xIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNzIxODA1MDgwLCJleHAiOjE3MjE4MDg2ODB9.HYi6-uCTCEoLmuYLmo8uZDLHkzQp0W0BHRIFwv1uvBQ
+
+{
+  "name": "Fadil",
+  "description": "Fadil yang dibaluti Tepung",
+  "price": 3.50
+}
+
+### Get all menu items
+GET http://localhost:3000/menu
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJPV04xIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNzIxODA1MDgwLCJleHAiOjE3MjE4MDg2ODB9.HYi6-uCTCEoLmuYLmo8uZDLHkzQp0W0BHRIFwv1uvBQ
+
+### Update a menu item (owner only)
+PUT http://localhost:3000/menu/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJPV04xIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNzIxODA1MDgwLCJleHAiOjE3MjE4MDg2ODB9.HYi6-uCTCEoLmuYLmo8uZDLHkzQp0W0BHRIFwv1uvBQ
+
+{
+  "name": "Espresso",
+  "description": "Strong black coffee",
+  "price": 4.00
+}
+
+### Delete a menu item (owner only)
+DELETE http://localhost:3000/menu/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJPV04xIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNzIxODA1MDgwLCJleHAiOjE3MjE4MDg2ODB9.HYi6-uCTCEoLmuYLmo8uZDLHkzQp0W0BHRIFwv1uvBQ
+
+### Create a new order (customer only)
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJDVVMxIiwicm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzIxODA1Mjk1LCJleHAiOjE3MjE4MDg4OTV9.lD7_uo5dgAzxrWFrQ8Swr4MTXZsQkFqxalA9Lbw9xEY
+
+{
+  "menuItems": [
+    {
+      "id": 2,
+      "quantity": 2
+    }
+  ]
+}
+
+### Get all orders (cashier only)
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJDQVMxIiwicm9sZSI6ImNhc2hpZXIiLCJpYXQiOjE3MjE4MDUzMTksImV4cCI6MTcyMTgwODkxOX0.ga32O5Gg3VgKxEZBqhiQJNGgXfyhtL5eio_VfhPlCfM
+
+### Complete an order (cashier only)
+PUT http://localhost:3000/orders/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJDQVMxIiwicm9sZSI6ImNhc2hpZXIiLCJpYXQiOjE3MjE4MDUzMTksImV4cCI6MTcyMTgwODkxOX0.ga32O5Gg3VgKxEZBqhiQJNGgXfyhtL5eio_VfhPlCfM
+
+### Get sales report (owner only)
+GET http://localhost:3000/sales-report
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJPV04xIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNzIxODA1NDM3LCJleHAiOjE3MjE4MDkwMzd9.gfacgy03yyCema4j_KsE0-6U54rsA-l7xBhk5aDhxQs
