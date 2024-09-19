@@ -1,9 +1,9 @@
 // models/index.js
 const sequelize = require("../config/database");
-const User = require("./User");
-const MenuItem = require("./MenuItem");
-const Order = require("./Order");
-const OrderItem = require("./OrderItem");
+const User = require("./entities/User");
+const MenuItem = require("./entities/MenuItem");
+const Order = require("./entities/Order");
+const OrderItem = require("./entities/OrderItem");
 
 User.hasMany(Order, { foreignKey: "customerId" });
 Order.belongsTo(User, { foreignKey: "customerId" });

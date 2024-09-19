@@ -1,6 +1,6 @@
 // models/MenuItem.js
 const { DataTypes } = require("sequelize");
-const sequelize = require("../config/database");
+const sequelize = require("../../config/database");
 
 const MenuItem = sequelize.define("MenuItem", {
   id: {
