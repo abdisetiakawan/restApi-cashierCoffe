@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { Order, OrderItem, MenuItem } = require("../models"); // Mengimpor model yang dibutuhkan
-const { authenticateToken, authorizeRole } = require("../middleware/auth"); // Mengimpor middleware untuk autentikasi dan otorisasi
+const { authenticateToken, authorizeRole } = require("../middlewares/auth"); // Mengimpor middleware untuk autentikasi dan otorisasi
 
 // Menggunakan middleware untuk mengautentikasi token pada semua rute di router ini
 router.use(authenticateToken);

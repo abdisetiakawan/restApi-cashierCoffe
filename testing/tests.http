@@ -1,4 +1,4 @@
-@baseUrl = https://muhammadabduljabbar-production.up.railway.app
+@baseUrl = http://localhost:3000
 @ownerToken = {{OWNER_TOKEN}}
 @cashierToken = {{CASHIER_TOKEN}}
 @customerToken = {{CUSTOMER_TOKEN}}

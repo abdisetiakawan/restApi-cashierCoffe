@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { Order, OrderItem, MenuItem, sequelize } = require("../models");
-const { authenticateToken, authorizeRole } = require("../middleware/auth");
+const { authenticateToken, authorizeRole } = require("../middlewares/auth");
 
 router.use(authenticateToken);
 
