@@ -33,7 +33,7 @@ sequelize
   });
 
 app.get("/", (req, res) => {
-  res.send("Selamat datang di Aplikasi CoffeBar by Abdul Jabbar");
+  res.send("Selamat datang di Aplikasi Cashier Coffe by Abdi Setiawan");
 });
 
 const PORT = process.env.PORT || 3000;
